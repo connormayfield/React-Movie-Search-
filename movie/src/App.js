@@ -24,12 +24,10 @@ function App() {
     const data = await response.json();
     setMovies(data.results);
     console.log(data.results);
-    console.log(data.results[0].title);
   };
 
   const updateSearch = e => {
     setSearch(e.target.value);
-    console.log(search);
   };
 
   const getSearch = e => {
@@ -38,32 +36,35 @@ function App() {
     setSearch("");
   };
   return (
-    <MovieProvider>
-      <div className="App">
-        <form onSubmit={getSearch} className="search-form">
-          <input
-            className="search-bar"
-            type="text"
-            value={search}
-            onChange={updateSearch}
-          />
-          <button className="search-button" type="submit">
-            Search
-          </button>
-        </form>
+    // <MovieProvider>
+    <div className="App">
+      <form onSubmit={getSearch} className="search-form">
+        <input
+          className="search-bar"
+          type="text"
+          value={search}
+          onChange={updateSearch}
+        />
+        <button className="search-button" type="submit">
+          Search
+        </button>
+      </form>
+      <div className="appMovie">
         {movies.map(movie => (
           <Render
-            title={movie.title}
+            // title={movie.title}
+            // average={movie.vote_average}
             overview={movie.overview}
             image={movie.poster_path}
           />
         ))}
 
-        <Nav />
+        {/* <Nav />
         <MovieList />
-        <AddMovie />
+        <AddMovie /> */}
       </div>
-    </MovieProvider>
+    </div>
+    // </MovieProvider>
   );
 }
 
