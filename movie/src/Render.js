@@ -9,12 +9,14 @@ const Render = ({ title, average, image, overview }) => {
         src={`http://image.tmdb.org/t/p/w185${image}`}
         alt=""
       />
-      <p className="text">{overview} </p>
+      <div className="textDiv">
+        {/* <p className="text">{overview} </p> */}
 
-      {/* <div className="subset">
-          <h1>{title}</h1>
+        <div className="subset">
+          <p>{title}</p>
           <p>{average}</p>
-        </div> */}
+        </div>
+      </div>
     </div>
   );
 };

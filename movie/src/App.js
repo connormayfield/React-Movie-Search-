@@ -52,8 +52,8 @@ function App() {
       <div className="appMovie">
         {movies.map(movie => (
           <Render
-            // title={movie.title}
-            // average={movie.vote_average}
+            title={movie.title}
+            average={movie.vote_average}
             overview={movie.overview}
             image={movie.poster_path}
           />
